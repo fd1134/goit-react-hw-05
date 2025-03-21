@@ -3,7 +3,7 @@ const myApiKey = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDZmZmY5OWU0YmZiOGI2YT
 axios.defaults.baseURL='https://api.themoviedb.org/3';
 axios.defaults.headers.common["Authorization"] = myApiKey;
 export const fetchMovies = async (type,url,query) => {
-  let response=[];
+  let response=null;
 switch (type) {
   case 'trend':
     response = await axios.get(url);
@@ -15,9 +15,9 @@ switch (type) {
       }
     });
     break;
-
-  default:
-    break;
+    case 'detail':
+      response = await axios.get(url);
+      return response.data;
 } 
   
  
