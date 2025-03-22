@@ -18,6 +18,9 @@ switch (type) {
     case 'detail':
       response = await axios.get(url);
       return response.data;
+    case 'cast':
+      response = await axios.get(url);
+      return response.data.cast;
 } 
   
  

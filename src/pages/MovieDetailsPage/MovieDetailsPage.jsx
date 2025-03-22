@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import css from "./MovieDetailsPage.module.css";
-import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { fetchMovies } from "../../utils/moviesApi";
 
 const MovieDetailsPage = () => {
@@ -60,12 +60,12 @@ const MovieDetailsPage = () => {
       <div className={css.additional}>
         <p>Additional information</p>
       <nav className={css.navLinks}>
-        <Link to="cast" state={location.state} end>
+         <NavLink to="cast" state={location.state}  end>
           Cast
-        </Link>
-        <Link to="reviews" state={location.state} end>
+         </NavLink>
+         <NavLink to="reviews" state={location.state}  end>
           Reviews
-        </Link>
+         </NavLink> 
       </nav>
       </div>    
       <Outlet />
