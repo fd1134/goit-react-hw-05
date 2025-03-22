@@ -15,7 +15,6 @@ const MovieCast=()=>{
             setActors([]);
             const data = await fetchMovies("cast", `movie/${movieId}/credits?language=en-US`);
             setActors(data);
-            console.log("cats0",data)
           } catch (err) {
             setError(err.message || "Bir hata oluştu.");
           } finally {

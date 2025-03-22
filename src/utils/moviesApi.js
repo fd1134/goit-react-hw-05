@@ -21,6 +21,9 @@ switch (type) {
     case 'cast':
       response = await axios.get(url);
       return response.data.cast;
+    case 'reviews':
+      response = await axios.get(url);
+      return response.data.results;
 } 
   
  
