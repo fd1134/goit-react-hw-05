@@ -32,7 +32,7 @@ const MovieCast = () => {
     <>
       {loading && <p>Yükleniyor...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {actors.length > 0 && (
+      {actors.length > 0 ? (
         <ul>
           {actors.map((actor) => {
             return (
@@ -47,6 +47,8 @@ const MovieCast = () => {
             );
           })}
         </ul>
+      ) : (
+        "We can't give any information about this movie."
       )}
     </>
   );
