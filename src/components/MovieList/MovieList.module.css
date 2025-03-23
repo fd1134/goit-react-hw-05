@@ -1,0 +1,13 @@
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.link {
+  color: black;
+}
+.link:hover {
+  text-decoration: none;
+  color: brown;
+}

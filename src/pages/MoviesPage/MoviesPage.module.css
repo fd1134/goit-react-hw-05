@@ -1,36 +1,36 @@
 .frm {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    width: fit-content;
-  }
-  
-  .inpt[type="text"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border 0.3s ease-in-out;
-  }
-  
-  .inpt[type="text"]:focus {
-    border-color: #007bff;
-  }
-  
-  .btn {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-  }
-  
- .btn:hover {
-    background: #0056b3;
-  }
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+}
+
+.inpt[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.inpt[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #0056b3;
+}

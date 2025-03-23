@@ -1,0 +1,27 @@
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+li {
+  text-align: left;
+  width: 200px; /* Resim + metin için biraz geniş alan */
+}
+
+li img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px; /* Köşeleri yuvarlatmak için */
+}
+
+li p {
+  margin: 5px 0;
+  font-size: 14px;
+}

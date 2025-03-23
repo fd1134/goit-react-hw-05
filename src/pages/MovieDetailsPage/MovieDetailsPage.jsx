@@ -1,22 +1,29 @@
 import { useEffect, useState } from "react";
 import css from "./MovieDetailsPage.module.css";
-import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { fetchMovies } from "../../utils/moviesApi";
-
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
   const location = useLocation();
-  
 
   useEffect(() => {
     const movieDetail = async () => {
       try {
         setLoading(true);
         setError(null);
-        const data = await fetchMovies("detail", `movie/${movieId}?language=en-US`);
+        const data = await fetchMovies(
+          "detail",
+          `movie/${movieId}?language=en-US`
+        );
         setMovie(data);
       } catch (err) {
         setError(err.message || "Bir hata oluştu.");
@@ -34,13 +41,18 @@ const MovieDetailsPage = () => {
       </Link>
 
       {loading && <p>Yükleniyor...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className={css.err}>{error}</p>}
 
       {movie && (
         <div className={css.container}>
           <img
-            src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : "/placeholder.jpg"}
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
+                : "/placeholder.jpg"
+            }
             alt={movie.original_title || "Movie Poster"}
+            className={css.img}
           />
           <div>
             <h2>{movie.original_title}</h2>
@@ -59,15 +71,15 @@ const MovieDetailsPage = () => {
 
       <div className={css.additional}>
         <p>Additional information</p>
-      <nav className={css.navLinks}>
-         <NavLink to="cast" state={location.state}  end>
-          Cast
-         </NavLink>
-         <NavLink to="reviews" state={location.state}  end>
-          Reviews
-         </NavLink> 
-      </nav>
-      </div>    
+        <nav className={css.navLinks}>
+          <NavLink to="cast" state={location.state} end>
+            Cast
+          </NavLink>
+          <NavLink to="reviews" state={location.state} end>
+            Reviews
+          </NavLink>
+        </nav>
+      </div>
       <Outlet />
     </>
   );
